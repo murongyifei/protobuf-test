@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+//生成文件所在包名
+option java_package = "space.whm.open";
+//生成的java文件名
+option java_outer_classname = "CommonDemo";
+
+//年级枚举类
+enum Grade {
+    DEFAULTG = 0;
+    GRADE1 = 1;
+    GRADE2 = 2;
+    GRADE3 = 3;
+    GRADE4 = 4;
+    GRADE5 = 5;
+    GRADE6 = 6;
+    GRADE7 = 7;
+    GRADE8 = 8;
+    GRADE9 = 9;
+    GRADE10 = 10;
+    GRADE11 = 11;
+    GRADE12 = 12;
+    GRADE654 = 654;
+}
+
+//学科枚举类
+enum Knowledge {
+    DEFAULTK = 0;
+    YUWEN = 1;
+    SHUXUE = 2;
+    YINGYU = 3;
+    WULI = 4;
+    HUAXUE = 5;
+    KEXUE = 6;
+    DAODEYUFAZHI = 7;
+    LISHI = 8;
+
+}
+
+//课程状态 0删除 1上线状态 2 下线状态
+enum IsAvaliable {
+    DEFAULTI = 0;
+    ONLINE = 1;
+    OFFLINE = 2;
+}
+
+//是否免费 0免费 1不免费
+enum IsFree {
+    Y = 0;
+    N = 1;
+}
+
+//学段 1小学 2初中 3高中
+enum LearnStage {
+    DEFAULTL = 0;
+    XIAOXUE = 1;
+    CHUZHONG = 2;
+    GAOZHONG = 3;
+}
+
+enum Sex {
+    WOMAN = 0;//女
+    MAN = 1;//男
+}

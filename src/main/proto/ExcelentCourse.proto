@@ -1,0 +1,16 @@
+syntax = "proto3";
+//生成文件所在包名
+option java_package = "space.whm.open";
+//生成的java文件名
+option java_outer_classname = "ExcellentCourse";
+//精品课套课数据结构
+message ExcellentCourse{
+    int64 xhyxId = 1;
+    int64 outId = 2;
+    int32 learnStage = 3;
+    string name = 4;
+    string logo = 5;
+    int64 currentprice = 6;
+    string layerName = 7;
+    string company = 8;//外部公司名称标识
+}
