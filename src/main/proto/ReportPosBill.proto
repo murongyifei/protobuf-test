@@ -1,0 +1,20 @@
+syntax = "proto3";
+//生成文件所在包名
+option java_package = "space.whm.open";
+//生成的java文件名
+option java_outer_classname = "ReportPosBillInfo1";
+
+message ReportPosBill {
+    int32 ognid = 1;// 门店ID
+    string billid = 2;// 账单ID
+    string billno = 3;// 账单号
+    int32 businesstype = 4;//	业务类型
+    int32 source = 5;// 订单来源
+    string tableno = 6;// 桌号/取餐号
+    double totalconsume = 7;// 消费合计
+    double realprice = 8;// 收款合计
+//    string pmname = 9;// 支付方式名称，多个逗号分割
+//    string paytime = 10;// 结账时间
+    int32 billstatus = 11;// 订单状态：1.有效 2.无效 3 未结
+}
+
