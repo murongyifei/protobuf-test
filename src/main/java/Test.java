@@ -13,13 +13,13 @@ import java.io.IOException;
 public class Test {
     public static void main(String[] args) {
 //        writeToFile();
-//        readToByte();
+        readToByte();
         beanToPB();
-//        pbToBean();
+        pbToBean();
     }
 
     public static void readToByte() {
-        System.out.println("======读取字段少的文件--转换到字段多的实体=======");
+        System.out.println("======读取字段少的PB文件--转换到字段多的PB实体=======不报错");
         try {
             // 读取字段少的文件
             byte[] bytes = FileUtils.readFileToByteArray(new File(System.getProperties().get("user.dir")
@@ -32,7 +32,7 @@ public class Test {
             e.printStackTrace();
         }
         System.out.println("=============");
-        System.out.println("======读取字段多的文件--转换到字段少的实体=======");
+        System.out.println("======读取字段多的PB文件--转换到字段少的PB实体=======不报错");
         try {
             // 读取字段多的文件
             byte[] bytes = FileUtils.readFileToByteArray(new File(System.getProperties().get("user.dir")
@@ -83,7 +83,7 @@ public class Test {
     }
 
     public static void beanToPB() {
-        System.out.println("======字段少的bean--转换到字段多的PB实体=======");
+        System.out.println("======字段少的bean--转换到字段多的PB实体=======不报错");
         ReportPosBillLess less = new ReportPosBillLess(27, "5735666199e7477abdb078a7133da8ba", "1201022032617000028", 1, 1, "12", 51.0, 41.0, 1);
         String json = new GsonBuilder().create().toJson(less);
         ReportPosBillInfo.ReportPosBill.Builder builder = ReportPosBillInfo.ReportPosBill.newBuilder();
@@ -97,7 +97,7 @@ public class Test {
 
         }
         System.out.println("=============");
-        System.out.println("======字段多的Bean--转换到字段少的PB实体--转换异常=======");
+        System.out.println("======字段多的Bean--转换到字段少的PB实体=======转换异常");
         System.out.println("======特殊情况：Bean多的这些字段值为null，序列化之后的字符串不包括这些null值的字段，正好匹配字段少的PB实体，转换正常=======");
         ReportPosBillGreater greater = new ReportPosBillGreater(27, "5735666199e7477abdb078a7133da8ba", "1201022032617000028", 1, 1, "12", 51.0, 41.0, "现金", "2022-03-01 12:12:12", 1);
         String json1 = new GsonBuilder().create().toJson(greater);
@@ -111,7 +111,7 @@ public class Test {
     }
 
     public static void pbToBean() {
-        System.out.println("======字段少的PB实体--转换到字段多的bean=======");
+        System.out.println("======字段少的PB实体--转换到字段多的bean=======不报错");
         try {
             byte[] bytes = FileUtils.readFileToByteArray(new File(System.getProperties().get("user.dir")
                     + "/pbdata/09Col.txt"));
@@ -125,7 +125,7 @@ public class Test {
             e.printStackTrace();
         }
         System.out.println("=============");
-        System.out.println("======字段多的PB实体--转换到字段少的bean=======");
+        System.out.println("======字段多的PB实体--转换到字段少的bean=======不报错");
         try {
             byte[] bytes = FileUtils.readFileToByteArray(new File(System.getProperties().get("user.dir")
                     + "/pbdata/11Col.txt"));
