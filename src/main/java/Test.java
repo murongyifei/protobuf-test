@@ -10,6 +10,17 @@ import space.whm.open.ReportPosBillLess;
 import java.io.File;
 import java.io.IOException;
 
+/*
+总结:
+1.1.读取字段少的PB文件--转换到字段多的PB实体=======不报错
+1.2.读取字段多的PB文件--转换到字段少的PB实体=======不报错
+
+2.1.字段少的bean--转换到字段多的PB实体=======不报错
+2.2.字段多的Bean--转换到字段少的PB实体=======转换异常(特殊情况：Bean多的这些字段值为null，序列化之后的字符串不包括这些null值的字段，正好匹配字段少的PB实体，转换正常)
+
+3.1.字段少的PB实体--转换到字段多的bean=======不报错
+3.2.字段多的PB实体--转换到字段少的bean=======不报错
+ */
 public class Test {
     public static void main(String[] args) {
 //        writeToFile();
